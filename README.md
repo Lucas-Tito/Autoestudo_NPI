@@ -1,4 +1,4 @@
-Craindo o Banco de dados.
+<h2 align="center"> Criando Banco de Dados </h2>
 
 + sudo apt install postgresql postgresql-contrib
 + sudo -u postgres psql
@@ -8,3 +8,9 @@ Craindo o Banco de dados.
 + \c usuariosdb
 + GRANT ALL PRIVILEGES ON SCHEMA public TO admin;
 
+<h2 align="center"> Instalando Frontend </h2>
+
++ npm install -g @vue/cli
++ vue create vue-crud-usuarios
++ cd vue-crud-usuarios
++ npm run serve
