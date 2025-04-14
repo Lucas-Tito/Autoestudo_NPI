@@ -7,7 +7,7 @@
         <!-- Formulário para adicionar ou editar usuários -->
         <v-form @submit.prevent="handleSubmit">
           <v-text-field
-            v-model="form.name"
+            v-model="form.nome"
             label="Nome"
             outlined
             required
@@ -33,7 +33,7 @@
             class="d-flex justify-space-between align-center"
           >
             <div>
-              {{ user.name }} ({{ user.email }})
+              {{ user.nome }} ({{ user.email }})
             </div>
             <div>
               <v-btn small color="info" @click="editUser(user)">Editar</v-btn>
@@ -50,12 +50,12 @@
 import { ref, onMounted } from 'vue'
 
 // Lista de usuários
-const users = ref<{ id: number; name: string; email: string }[]>([])
+const users = ref<{ id: number; nome: string; email: string }[]>([])
 
 // Dados do formulário (vazio inicialmente)
-const form = ref<{ id: number | null; name: string; email: string }>({
+const form = ref<{ id: number | null; nome: string; email: string }>({
   id: null,
-  name: '',
+  nome: '',
   email: '',
 })
 
@@ -88,14 +88,14 @@ const handleSubmit = async () => {
       body: JSON.stringify(form.value),
     })
     await fetchUsers()
-    form.value = { id: null, name: '', email: '' }
+    form.value = { id: null, nome: '', email: '' }
   } catch (err) {
     console.error('Erro ao enviar formulário:', err)
   }
 }
 
 // Carrega dados no formulário para edição
-const editUser = (user: { id: number; name: string; email: string }) => {
+const editUser = (user: { id: number; nome: string; email: string }) => {
   form.value = { ...user }
 }
 
