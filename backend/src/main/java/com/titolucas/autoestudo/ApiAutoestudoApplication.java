@@ -13,9 +13,6 @@ public class ApiAutoestudoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ApiAutoestudoApplication.class, args);
 
-		logger.info("======================================");
-		logger.info("It was too big to be called a sword");
-		logger.info("======================================");
 	}
 
 }

@@ -35,7 +35,7 @@
             <div>
               {{ user.nome }} ({{ user.email }})
             </div>
-            <div>
+            <div class="d-flex">
               <v-btn small color="info" @click="editUser(user)">Editar</v-btn>
               <v-btn small color="error" @click="deleteUser(user.id)">Excluir</v-btn>
             </div>
